@@ -1,6 +1,7 @@
 import CreateCustomer from "./CreateCustomer";
 import AccountOperations from "./AccountOperations";
 import Customer from "./Customer";
+import BalanceDisplay from "./BalanceDisplay";
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <CreateCustomer />
       <Customer />
       <AccountOperations />
+      <BalanceDisplay />
     </div>
   );
 }
