@@ -40,9 +40,24 @@ function accountReducer(state = initialStateAccount, action) {
   }
 }
 
-function customerReducer() {}
+function customerReducer(state = initialStateCustomer, action) {
+  switch (action.type) {
+    case "customer/createCustomer":
+      return {
+        ...state,
+        fullName: action.payload.fullName,
+        nationalID: action.payload.nationalID,
+        createdAt: action.payload.createdAt,
+      };
+    case "customer/updateName":
+      return { ...state, fullName: action.payload };
 
-const store = createStore(reducer); // creating store
+    default:
+      return state;
+  }
+}
+
+const store = createStore(accountReducer); // creating store
 
 /*store.dispatch({ type: "account/deposit", payload: 500 });
 store.dispatch({ type: "account/withdraw", payload: 200 });
