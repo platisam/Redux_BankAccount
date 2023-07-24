@@ -31,7 +31,7 @@ export default function accountReducer(state = initialStateAccount, action) {
         loanPurpose: "",
         balance: state.balance - state.loan,
       };
-    case "convertingCurrency":
+    case "account/convertingCurrency":
       return {
         ...state,
         isLoading: true,
